@@ -1,0 +1,31 @@
+gradle-wrapper.jar
+/.gradle
+/captures/
+/gradlew
+/gradlew.bat
+/local.properties
+GeneratedPluginRegistrant.java
+.cxx/
+
+# Remember to never publicly share your keystore.
+# See https://flutter.dev/to/reference-keystore
+key.properties
+**/*.keystore
+**/*.jks
+
+# Temporary diagnostic files
+diagnose_flutter.init.gradle
+
+# Local backup archives
+lib.zip
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+key.properties
+
+# Local temporary reports
+detail_error.log
