@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 // Laravel REST API + MySQL
 // ============================================================
 
-const String _apiBaseUrl = 'http://127.0.0.1:8888/api';
+const String _apiBaseUrl = 'http://192.168.1.106:8000/api';
 
 class _StudyColors {
   static const navy = Color(0xFF071F57);

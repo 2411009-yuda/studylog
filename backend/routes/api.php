@@ -29,6 +29,7 @@ function studyLogNow(): Carbon
 |
 */
 
+
 Route::get('/courses', function () {
 
     $courses = DB::table('courses')
@@ -535,4 +536,12 @@ Route::delete('/study-logs/{id}', function (int $id) {
         'message' => 'Aktivitas belajar berhasil dihapus.',
     ]);
 
+});
+
+
+Route::get('/test', function () {
+    return response()->json([
+        'success' => true,
+        'message' => 'Laravel berhasil terhubung ke Flutter!',
+    ]);
 });

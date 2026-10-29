@@ -19,7 +19,7 @@ import 'catatan_lokal_screen.dart';
 // KONFIGURASI API LARAVEL
 // ============================================================
 
-const String apiBaseUrl = 'http://127.0.0.1:8888/api';
+const String apiBaseUrl = 'http://192.168.1.106:8000/api';
 
 // ============================================================
 // MODEL MATA KULIAH
