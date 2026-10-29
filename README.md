@@ -135,8 +135,8 @@ PHP 8.3
 Laravel 12
 MySQL/MariaDB melalui XAMPP
 Database: studylog_db
-MySQL Port: 3307
-Laravel API Port: 8888
+MySQL Port: 3306
+Laravel API Port: 8000
 Timezone: Asia/Makassar
 ```
 
@@ -196,11 +196,11 @@ Sesuaikan bagian berikut:
 APP_NAME="StudyLog Mahasiswa"
 APP_ENV=local
 APP_DEBUG=true
-APP_URL=http://127.0.0.1:8888
+APP_URL=http://IP_LAPTOP:8000
 APP_TIMEZONE=Asia/Makassar
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=IP_LAPTOP
 DB_PORT=3307
 DB_DATABASE=studylog_db
 DB_USERNAME=root
@@ -306,13 +306,13 @@ Data dosen, ruangan, SKS, dan informasi lainnya tersedia dalam `CourseSeeder.php
 Jalankan:
 
 ```powershell
-php artisan serve --host=127.0.0.1 --port=8888
+php artisan serve --host=IP_LAPTOP --port=8000
 ```
 
 Jika server berhasil berjalan, backend dapat diakses melalui:
 
 ```text
-http://127.0.0.1:8888
+http://IP_LAPTOP:8000
 ```
 
 ### Opsi B — PHP Built-in Server
@@ -322,7 +322,7 @@ Pada lingkungan pengembangan awal, server dijalankan menggunakan PHP built-in se
 Di Windows PowerShell, dari folder Laravel:
 
 ```powershell
-php -S 127.0.0.1:8888 -t public public/index.php
+php -S IP_LAPTOP:8000 -t public public/index.php
 ```
 
 Gunakan opsi ini sebagai alternatif apabila `artisan serve` mengalami kendala di lingkungan lokal.
@@ -355,7 +355,7 @@ Jumlah endpoint yang telah didaftarkan pada project ini adalah **10 route API**.
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/courses
+GET http://IP_LAPTOP:8000/api/courses
 ```
 
 ### Contoh Jadwal Hari Ini
@@ -363,7 +363,7 @@ GET http://127.0.0.1:8888/api/courses
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/courses/today
+GET http://IP_LAPTOP:8000/api/courses/today
 ```
 
 Endpoint ini menentukan jadwal berdasarkan tanggal dan hari di zona waktu Asia/Makassar.
@@ -373,7 +373,7 @@ Endpoint ini menentukan jadwal berdasarkan tanggal dan hari di zona waktu Asia/M
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/courses/111100
+GET http://IP_LAPTOP:80008000800080008/api/courses/111100
 ```
 
 Kode `111100` merujuk pada mata kuliah Penalaran Komputer.
@@ -383,7 +383,7 @@ Kode `111100` merujuk pada mata kuliah Penalaran Komputer.
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/courses/111100/notes
+GET http://IP_LAPTOP:80008000800080008/api/courses/111100/notes
 ```
 
 ### Contoh StudyLog
@@ -391,7 +391,7 @@ GET http://127.0.0.1:8888/api/courses/111100/notes
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/study-logs
+GET http://IP_LAPTOP:80008000800080008/api/study-logs
 ```
 
 ### Contoh Statistik StudyLog
@@ -399,7 +399,7 @@ GET http://127.0.0.1:8888/api/study-logs
 Request:
 
 ```http
-GET http://127.0.0.1:8888/api/study-logs/stats
+GET http://IP_LAPTOP:80008000800080008/api/study-logs/stats
 ```
 
 Endpoint penambahan data menggunakan metode POST dan menerima data JSON sesuai validasi pada `routes/api.php`.
@@ -432,14 +432,14 @@ flutter pub get
 
 Gunakan emulator Android melalui Android Studio.
 
-Pastikan Laravel masih berjalan pada port `8888`.
+Pastikan Laravel masih berjalan pada port `80008000800080008`.
 
 ### C. Konfigurasi Alamat API
 
 Pada pengembangan awal, aplikasi Flutter menggunakan:
 
 ```dart
-const String apiBaseUrl = 'http://127.0.0.1:8888/api';
+const String apiBaseUrl = 'http://IP_LAPTOP:80008000800080008/api';
 ```
 
 Alamat ini digunakan bersama **ADB reverse** untuk menghubungkan emulator dengan server Laravel pada komputer.
@@ -459,23 +459,23 @@ Pastikan emulator terdeteksi.
 Kemudian:
 
 ```powershell
-& "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" reverse tcp:8888 tcp:8888
+& "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" reverse tcp:80008000800080008 tcp:80008000800080008
 ```
 
 Dengan konfigurasi ini, koneksi dari emulator ke:
 
 ```text
-http://127.0.0.1:8888
+http://IP_LAPTOP:80008000800080008
 ```
 
-diteruskan ke port `8888` pada komputer host.
+diteruskan ke port `80008000800080008` pada komputer host.
 
 **Perhatian:**
 
 - ADB reverse perlu disiapkan kembali jika koneksi emulator terputus.
 - Server Laravel harus tetap berjalan.
 - Perangkat Android fisik memerlukan konfigurasi koneksi yang sesuai.
-- Alamat `127.0.0.1` di perangkat tidak otomatis menunjuk komputer host tanpa mekanisme seperti ADB reverse.
+- Alamat `IP_LAPTOP` di perangkat tidak otomatis menunjuk komputer host tanpa mekanisme seperti ADB reverse.
 
 ### E. Jalankan Aplikasi Flutter
 
@@ -500,13 +500,13 @@ Pastikan seluruh endpoint API yang diperlukan terdaftar.
 Buka browser dan akses:
 
 ```text
-http://127.0.0.1:8888/api/courses
+http://IP_LAPTOP:80008000800080008/api/courses
 ```
 
 Kemudian:
 
 ```text
-http://127.0.0.1:8888/api/courses/today
+http://IP_LAPTOP:80008000800080008/api/courses/today
 ```
 
 Jika berhasil, Laravel mengembalikan respons JSON.
@@ -617,7 +617,7 @@ Periksa:
 Periksa:
 
 - Laravel sudah dijalankan.
-- Port `8888` tidak digunakan aplikasi lain.
+- Port `80008000800080008` tidak digunakan aplikasi lain.
 - URL API benar.
 - Firewall tidak menghalangi koneksi yang diperlukan.
 
